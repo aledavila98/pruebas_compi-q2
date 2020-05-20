@@ -16,8 +16,8 @@ stmt_list
         ;
 
 stmt_list_p
-        : EOL stmt stmt_list_p
-        | epsilon
+        : EOL stmt_list
+        | %epsilon
         ;
 
 stmt 
@@ -40,8 +40,12 @@ opt_arg_list
         ;
 
 arg_list
-        : arg_list arg
-        | arg
+        : arg arg_list_p
+        ;
+
+arg_list_p
+        : arg arg_list
+        | %epsilon
         ;
 
 arg 
@@ -50,15 +54,26 @@ arg
         ;
 
 expr 
-        : expr + term
-        | expr - term
+        : + expr_p
+        | - expr_p
         | term
         ;
 
+expr_p
+        : term expr
+        | %epsilon
+        ;
+        
+
 term 
-        : term * factor
-        | term / factor
+        : * 
+        | / 
         | factor
+        ;
+
+term_p
+        : factor term
+        | %epsilon
         ;
 
 factor 

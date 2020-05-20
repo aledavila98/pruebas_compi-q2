@@ -1,6 +1,10 @@
 #include "parser.h"
 
- void Parser::input()  {
+void Parser::parse() {
+
+}
+
+void Parser::input()  {
     if (currToken == Token::Eof) {
         currToken = lexer.getNextToken();
         opt_eol();
@@ -40,10 +44,36 @@ void Parser::stmt() {
     }
 }
 
+void Parser::assign() {
+    if (currToken == Token::Ident) {
+        currToken = lexer.getNextToken();
+        if (currToken == Token::OpAssign) {
+            currToken = lexer.getNextToken();
+            expr();
+        }
+    } else {
+
+    }
+}
+
 void Parser::print() {
     
 }
 
-void stmt_list_p() {
+void Parser::stmt_list_p() {
+    if (currToken == Token::Eol) {
+        currToken = lexer.getNextToken();
+        stmt();
+        stmt_list_p();
+    } else {
 
+    }
+}
+
+void Parser::func_decl() {
+
+}
+
+void Parser::expr() {
+    
 }
