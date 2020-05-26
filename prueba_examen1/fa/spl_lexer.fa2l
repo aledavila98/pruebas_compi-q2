@@ -1,0 +1,32 @@
+#include "spl_lexer.h"
+#include "spl_symbols.h"
+
+/*!fa2lexer
+    %option generate.tokens = false;
+
+    %file "start.jff";
+    %file "arithmetic.jff";
+    %file "decimal.jff";
+    %file "delimiters.jff";
+    %file "ident.jff";
+    %file "punctuation.jff";
+
+
+    %generate.state_enum(State);
+*/
+
+Symbol SplLexer::getNextToken()
+{
+    text = "";
+    /*!fa2lexer
+
+    %generate.lexer(text);
+    */
+}
+
+const char *SplLexer::tokenToString(Symbol sy)
+{
+    /*!fa2lexer
+    %generate.toString(sy);
+    */
+}
