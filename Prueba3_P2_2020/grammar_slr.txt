@@ -1,0 +1,25 @@
+input -> stmt_list opt_eol
+opt_eol -> EOL
+opt_eol -> %epsilon
+stmt_list -> stmt_list EOL stmt
+stmt_list -> stmt
+stmt -> assign
+stmt -> PRINT expr
+stmt -> fun_decl
+assign -> IDENT = expr
+fun_decl -> IDENT arg_list = expr
+arg_list -> arg_list , arg
+arg_list -> arg
+arg -> NUMBER
+arg -> IDENT
+expr -> expr + term
+expr -> expr - term
+expr -> term
+term -> term * factor
+term -> term / factor
+term -> factor
+factor -> IDENT opt_arg_list
+factor -> NUMBER
+factor -> ( expr )
+opt_arg_list -> arg_list
+opt_arg_list -> %epsilon

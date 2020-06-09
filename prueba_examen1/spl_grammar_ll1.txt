@@ -3,51 +3,51 @@ input -> opt_func_list
 opt_func_list -> func_list 
 opt_func_list -> ''
 
-func_list -> func_decl func_list_p
+func_list -> func_decl func_list'
 
-func_list_p -> func_list 
-func_list_p -> ''
+func_list' -> func_list 
+func_list' -> ''
 
 func_decl -> IDENT ( opt_arg_list ) block
 
 opt_arg_list -> arg_list 
 opt_arg_list -> ''
 
-arg_list -> IDENT arg_list_p
+arg_list -> IDENT arg_list'
 
-arg_list_p -> , arg_list 
-arg_list_p -> ''
+arg_list' -> , arg_list 
+arg_list' -> ''
 
 block -> { stmt_list }
 
-stmt_list -> stmt stmt_list_p
+stmt_list -> stmt stmt_list'
 
-stmt_list_p -> stmt stmt_list 
-stmt_list_p -> ''
+stmt_list' -> stmt stmt_list 
+stmt_list' -> ''
 
-stmt -> IDENT stmt_p 
+stmt -> IDENT stmt' 
 
-stmt_p -> ( expr_list ) 
-stmt_p -> = expr 
-stmt_p -> ''
+stmt' -> ( expr_list ) 
+stmt' -> = expr 
+stmt' -> ''
 
-expr_list -> expr expr_list_p
+expr_list -> expr expr_list'
 
-expr_list_p -> , expr expr_list 
-expr_list_p -> ''
+expr_list' -> , expr expr_list 
+expr_list' -> ''
 
-expr -> term expr_p
+expr -> term expr'
 
-expr_p -> + term expr 
-expr_p -> ''
+expr' -> + term expr 
+expr' -> ''
 
-term -> factor term_p
+term -> factor term'
 
-term_p -> * factor term 
-term_p -> ''
+term' -> * factor term 
+term' -> ''
 
 factor -> NUMBER 
-factor -> IDENT factor_p
+factor -> IDENT factor'
 
-factor_p -> ( expr_list )
-factor_p -> '' 
+factor' -> ( expr_list )
+factor' -> '' 

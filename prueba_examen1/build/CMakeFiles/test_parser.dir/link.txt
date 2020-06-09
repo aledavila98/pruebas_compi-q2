@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/test_parser.dir/spl_ll1_table.cpp.o CMakeFiles/test_parser.dir/spl_lexer.cpp.o CMakeFiles/test_parser.dir/home/alejandro/Documents/Compi/pruebas_compi-q2/prueba_examen1/spl_parser.cpp.o CMakeFiles/test_parser.dir/test_parser.cpp.o  -o test_parser 
