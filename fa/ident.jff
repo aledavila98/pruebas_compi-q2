@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>
+	<type>fa</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="q0">
+			<x>64.0</x>
+			<y>110.0</y>
+			<initial/>
+		</state>
+		<state id="1" name="q1">
+			<x>228.0</x>
+			<y>106.0</y>
+		</state>
+		<state id="2" name="q2">
+			<x>382.0</x>
+			<y>105.0</y>
+			<label>Symbol::IDENT</label>
+			<final/>
+		</state>
+		<!--The list of transitions.-->
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>_</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>[0-9]</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>[a-z]</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>[A-Z]</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>[0-9]</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>[a-z]</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>[A-Z]</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>_</read>
+		</transition>
+		<note>
+			<text>Name: Ident</text>
+			<x>54.0</x>
+			<y>16.0</y>
+		</note>
+	</automaton>
+</structure>
